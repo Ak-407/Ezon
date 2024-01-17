@@ -1,0 +1,800 @@
+<%- include('partials/header') %>
+
+
+<header class="header">
+    <a href="" class="logo"><i class="fa-solid fa-basket-shopping" style="color: #247e00;"></i>EZzon</i></a>
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#products">Products</a>
+    <a href="#professionals">Services</a>
+    <a href="#review">Review</a>
+
+</nav>
+<div class="icons">
+    <div class="fa fa-bars" id="menu-btn"></div>
+    <div class="fa fa-search" id="search-btn"></div>
+    <div class="fa fa-shopping-cart" id="cart-btn"></div>
+    <a class="fa fa-user" href="/login" role="button"></a>
+</div>
+
+<!-- <form action="/" class="search-form" method="post">
+<input type="search" name="search1" id="search-box" placeholder="Search Here
+... . .">
+<button type="submit" for="search-box" class="fa fa-search"></button>
+
+</form> -->
+<form action="/search" method="post" class="search-form">
+    <input type="search" name="search1" id="search-box" placeholder="Search Here...">
+    <button type="submit" for="search-box" class="fa fa-search"></button>
+  </form>
+  
+
+<div class="shopping-cart">
+    <div class="cart-items"></div>
+    <div class="total">Total: ₹0.00</div>
+    <a href="/payment" class="btn" onclick="passvalues()">Checkout</a>
+</div>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="home" id="home">
+    <div class="content kk" >
+        <div class="one"><a style="color: black;" href="#sports"><h2>Sports Products <i class="fa-solid fa-volleyball"></i></h2></a></div>
+        <div class="sec"><a style="color: black;" href="#kitchen"><h2>Kitchen Products <i class="fa-solid fa-kitchen-set"></i></h2></a></div>
+        <div class="thi"><a style="color: black;" href="#electric"><h2>Electric Appliances <i class="fa-solid fa-mobile-retro"></i></h2></a></div>
+        <div class="for"><h2>Hello</h2></div>
+        <div class="fiv"><h2>Hello</h2></div>
+        <button><a class="btn" href="/register">Become Our Seller</a></button>
+        <button><a class="btn" href="/skill">Join Our Platform for Jobs and Customers</a></button>
+    </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+<section class="homem" id="homme">
+        <div class="site-outer">
+            <div class="site-inner">
+                <section class="container-fluid">
+                    <!-- ACCORDION ROW -->
+                    <div class="row">
+                            <ul class="accordion-group" id="accordion">
+                                <li style="background-image: url('https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?w=2000&t=st=1704983965~exp=1704984565~hmac=8f9bdc2705c6810e859578b8bd4407969e240569af6b83caba8570f38a857f87');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Sports</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>We supply Best Quality Sports Items all Over India.</p>
+                                        </article>
+                                    </section>
+                                </li>
+                                <li class="out" style="background-image: url('https://img.freepik.com/free-photo/rendering-elegant-neoclassical-interior_23-2151059680.jpg?t=st=1704984025~exp=1704987625~hmac=175bea81e5d27e28d23f5df8287e40f8d8e41b86a51b71aced6fa08976470a01&w=826');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Furniture</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>We supply Best Quality Furniture all Over India.</p>
+                                        </article>
+                                    </section>
+                                </li>
+                                <li style="background-image: url('https://img.freepik.com/free-photo/3d-view-laptop-device_23-2150714199.jpg?t=st=1704984237~exp=1704987837~hmac=a3c0140d7e0a7ab5a82737837ae4a7a96148d981183cda6444f00f7d3249b513&w=1380');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Electronics</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>We supply Best Quality Electronic all Over India.</p>
+                                        </article>
+                                    </section>
+                                </li>
+                                <li style="background-image: url('https://img.freepik.com/free-photo/shopping-delivery-healthy-food-background-ai-generated-image_511042-1804.jpg?t=st=1704985511~exp=1704989111~hmac=eea2aa8f12b181f233e597b618794253c7d9c9319e2dda76bfa56a950a311a99&w=1800');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Grocery</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>We supply Best Quality Grocery all Over India.</p>
+                                        </article>
+                                    </section>
+                                </li>
+                                <li style="background-image: url('https://img.freepik.com/free-photo/pharmacy-background-with-outoffocus-shelves-medication_91128-3427.jpg?t=st=1704985555~exp=1704989155~hmac=7afcfa965cf8a99b287dca50521f898c19b7a5e855a71174d662daabfb5c40db&w=1800');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Pharmacy</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>We supply Best Quality Pharmacy all Over India.
+                                            </p>
+                                        </article>
+                                    </section>
+                                </li>
+                                <li style="background-image: url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80');">
+                                    <div class="accordion-overlay"></div>
+                                    <h3>Beauty</h3>
+                                    <section class="hidden-xs">
+                                        <article>
+                                            <p>When people want it cosy but stylish</p>
+                                        </article>
+                                    </section>
+                                </li>
+                            </ul>
+                    </div>
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="features" id="features">
+    <h1 class="heading">Our <span>Features</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="../photo/new-arrival-background-modern-style_23-2147895631.avif" alt="bat">
+            <h3>Fresh Arrivals</h3>
+            <p>The guide on Arrival helps us serve you better and make sure every single passenger at the Delhi Airport has a smooth and convenient experience.</p>
+            <button class="btn">Read More</button>
+        </div>
+    <!-- </div> -->
+    <!-- <div class="box-container"> -->
+        <div class="box">
+            <img src="../photo/download.png" alt="bat">
+            <h3>Fast Delivery</h3>
+            <p>A Document Delivery Form useful for requesting documents to be easily delivered to a provided address through collecting receiver group details</p>
+            <button class="btn">Read More</button>
+        </div>
+    <!-- </div> -->
+    <!-- <div class="box-container"> -->
+        <div class="box">
+            <img src="../photo/1673263767450.jpeg" alt="bat">
+            <h3>Easy Payments</h3>
+            <p>EasyPay allows you to query payment meta-data, receive payment notifications and generate payment references.</p>
+            <button class="btn">Read More</button>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<section class="products" id="products">
+    <h1 class="heading">Our <span>Products</span></h1>
+    <h1 id="sports" class="heading"><span>Sports Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (recordss && recordss.length > 0) { %>
+                <% recordss.forEach(function(file) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= file.image %>" alt="prof img">
+                        <h1><%= file.productName %></h1>
+                        <div class="price">₹<%= file.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+<!-- </section> -->
+<!-- <section class="products" id="products"> -->
+    <h1 id="kitchen" class="heading"><span>Kitchen Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (kitchen && kitchen.length > 0) { %>
+                <% kitchen.forEach(function(filek) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= filek.image %>" alt="prof img">
+                        <h1><%= filek.productName %></h1>
+                        <div class="price">₹<%= filek.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+    <h1 id="grocery" class="heading"><span>Grocery Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (grocery && grocery.length > 0) { %>
+                <% grocery.forEach(function(fileg) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= fileg.image %>" alt="prof img">
+                        <h1><%= fileg.productName %></h1>
+                        <div class="price">₹<%= fileg.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+    <h1 id="pharmacy" class="heading"><span>Pharmacy Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (pharmacy && pharmacy.length > 0) { %>
+                <% pharmacy.forEach(function(filem) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= filem.image %>" alt="prof img">
+                        <h1><%= filem.productName %></h1>
+                        <div class="price">₹<%= filem.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+    <h1 id="furniture" class="heading"><span>Furniture Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (furniture && furniture.length > 0) { %>
+                <% furniture.forEach(function(filef) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= filef.image %>" alt="prof img">
+                        <h1><%= filef.productName %></h1>
+                        <div class="price">₹<%= filef.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+    <h1 id="beauty" class="heading"><span>Beauty Products</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (beauty && beauty.length > 0) { %>
+                <% beauty.forEach(function(fileb) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= fileb.image %>" alt="prof img">
+                        <h1><%= fileb.productName %></h1>
+                        <div class="price">₹<%= fileb.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+<!-- </section> -->
+<!-- <section class="products" id="products"> -->
+    <h1 id="electric" class="heading"><span>Electric Appliances</span></h1>
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <% if (phone && phone.length > 0) { %>
+                <% phone.forEach(function(filep) { %>
+                    <div class="swiper-slide box">
+                        <img src="./photo/<%= filep.image %>" alt="prof img">
+                        <h1><%= filep.productName %></h1>
+                        <div class="price">₹<%= filep.productPrice %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button class="btn"><a href="/select">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+
+<section class="products" id="professionals">
+    <h1 class="heading"><span>Services</span></h1>
+    <div class="swiper product-slider">
+        
+        <div class="swiper-wrapper">
+            <% if (skillName && skillName.length > 0) { %>
+                <% skillName.forEach(function(skill) { %>
+                    <div class="swiper-slide box">
+                        <h1 style="color: red;">Profession: <%= skill.profession %></h1>
+                        <h1>Name: <%= skill.name %></h1>
+                        <h3>Experience: <%= skill.experience %> Years</h1>
+                        <div class="price">₹<%= skill.price %>/-</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                        </div>
+                        <button onclick="hireProfessional('<%= skill.profession %>', '<%= skill.name %>', '<%= skill.experience %>', '<%= skill.price %>');" type="button" class="btn">Hire Me</button>
+                    </div>
+                <% }) %>
+            <% } %>
+            <div style="padding-top: 24% !important;" class="swiper-slide box">
+                <button  class="btn"><a href="/skill">..+..</a></button>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<section class="review" id="review">
+    <h1 class="heading">Customer's <span>Review</span></h1>
+    <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <img src="https://media.licdn.com/dms/image/D4D03AQHE58UY-1zCMQ/profile-displayphoto-shrink_400_400/0/1668623306028?e=1706745600&v=beta&t=TLPdtVvcBPXoRhBdoI6AAGDqlpmkuojadQZPFAYnbcg" alt="amaan">
+                <p>It is an Customer friendly website easy to use</p>
+                <h3>Syed Amaan</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="../photo/photo-1573496359142-b8d87734a5a2.jpeg" alt="amaan">
+                <p>they tell you aboyt your products or services</p>
+                <h3>Dr Rose</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="../photo/1612001761516.jpeg" alt="amaan">
+                <p>It is an Customer friendly website easy to use</p>
+                <h3>Prakash Gupta</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="../photo/photo-1519085360753-af0119f7cbe7.jpeg" alt="amaan">
+                <p>It is an Customer friendly website easy to use</p>
+                <h3>James Tom</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>EZzon  <span class="fa-solid fa-basket-shopping" style="color: #00752d;"></span></h4>
+         <ul>
+           <li><a href="#">about us</a></li>
+           <li><a href="#">our services</a></li>
+           <li><a href="#">privacy policy</a></li>
+           <li><a href="#">affiliate program</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>get help</h4>
+         <ul>
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">shipping</a></li>
+           <li><a href="#">returns</a></li>
+           <li><a href="#">order status</a></li>
+           <li><a href="#">payment options</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>online shop</h4>
+         <ul>
+           <li><a href="#">watch</a></li>
+           <li><a href="#">bag</a></li>
+           <li><a href="#">shoes</a></li>
+           <li><a href="#">dress</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>follow us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+         </div>
+       </div>
+     </div>
+    </div>
+ </footer>
+
+<script>
+    var globalTotal = 0;
+
+    
+document.addEventListener('DOMContentLoaded', function () {
+var cartItemsContainer = document.querySelector('.cart-items');
+var totalElement = document.querySelector('.total');
+var cartItems = [];
+
+function addToCart(itemName, itemPrice, imageSrc) {
+    var existingCartItem = cartItems.find(item => item.name === itemName);
+    if (existingCartItem) {
+        existingCartItem.quantity++;
+    } else {
+        cartItems.push({
+            name: itemName,
+            price: itemPrice,
+            quantity: 1,
+            image: imageSrc
+        });
+    }
+    
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateCartTotal();
+    displayCartItems(); // Call the function to display cart items
+}
+
+function removeFromCart(event) {
+    if (event.target.classList.contains('fa-trash')) {
+        var trashIcon = event.target;
+        var cartItem = trashIcon.closest('.box');
+        var itemNameElement = cartItem.querySelector('.content h3'); // Use more specific selector
+
+        if (itemNameElement) {
+            var itemName = itemNameElement.innerText;
+            console.log('Item to be removed:', itemName); // Debug statement
+            cartItems = cartItems.filter(item => item.name !== itemName);
+            console.log('Updated cartItems:', cartItems); // Debug statement
+            cartItem.remove();
+            updateCartTotal();
+        }
+    }
+}
+
+function displayCartItems() {
+    cartItemsContainer.innerHTML = ''; // Clear the existing cart items
+
+    cartItems.forEach(item => {
+        var cartItem = document.createElement('div');
+        cartItem.classList.add('box');
+        var cartItemContent = `
+          <i class="fa fa-trash"></i>
+          <img src="${item.image}">
+          <div class="content">
+            <h3>${item.name}</h3>
+            <span class="price">₹${item.price}/-</span>
+            <span class="quantity">${item.quantity}</span>
+          </div>
+        `;
+        cartItem.innerHTML = cartItemContent;
+        cartItemsContainer.appendChild(cartItem);
+    });
+}
+function updateCartTotal() {
+    var total = 0;
+
+    cartItems.forEach(item => {
+        total += item.price * item.quantity;
+    });
+
+    // Update the format here
+    totalElement.textContent = 'Total: ₹' + total.toFixed(2);
+    console.log('Total value:', total); // Debug statement
+    globalTotal=total;
+    return total;
+}
+
+var productsContainer = document.querySelector('.products');
+productsContainer.addEventListener('click', handleAddToCart);
+cartItemsContainer.addEventListener('click', removeFromCart);
+
+function handleAddToCart(event) {
+    if (event.target.classList.contains('btn')) {
+        var button = event.target;
+        var productBox = button.closest('.box');
+        var productName = productBox.querySelector('h1').innerText;
+        var productPrice = parseFloat(productBox.querySelector('.price').innerText.replace('₹', '').replace('/-', ''));
+        var imageSrc = productBox.querySelector('img').src;
+        addToCart(productName, productPrice, imageSrc); // Pass all three parameters
+    }
+}
+});
+
+function passvalues(){
+localStorage.setItem("textvalues",globalTotal);
+}
+function hireProfessional(profession, name, experience, price) {
+        // Create a formatted message
+        var message = "Hi, I'm interested in hiring you for the following skill:\n\n";
+        message += "Profession: " + profession + "\n";
+        message += "Name: " + name + "\n";
+        message += "Experience: " + experience + " Years\n";
+        message += "Price: ₹" + price + "/-\n\n";
+        message += "Could you please provide more information?";
+
+        // Encode the message for the URL
+        var encodedMessage = encodeURIComponent(message);
+
+        // Open WhatsApp chat with the pre-filled message
+        window.open("https://wa.me/+916006466047?text=" + encodedMessage, "_blank");
+    }
+</script>
+<script>
+    (function () {
+    var expand;
+    expand = function () {
+        var $input, $search;
+        $search = $('.search');
+        $input = $('.input');
+        if ($search.hasClass('close')) {
+            $search.removeClass('close');
+            $input.removeClass('square');
+        } else {
+            $search.addClass('close');
+            $input.addClass('square');
+        }
+        if ($search.hasClass('close')) {
+            $input.focus();
+        } else {
+            $input.blur();
+        }
+    };
+    $(function () {
+        var $accordion, $wideScreen;
+        $accordion = $('#accordion').children('li');
+        $wideScreen = $(window).width() > 767;
+        if ($wideScreen) {
+            $accordion.on('mouseenter click', function (e) {
+                var $this;
+                e.stopPropagation();
+                $this = $(this);
+                if ($this.hasClass('out')) {
+                    $this.addClass('out');
+                } else {
+                    $this.addClass('out');
+                    $this.siblings().removeClass('out');
+                }
+            });
+        } else {
+            $accordion.on('touchstart touchend', function (e) {
+                var $this;
+                e.stopPropagation();
+                $this = $(this);
+                if ($this.hasClass('out')) {
+                    $this.addClass('out');
+                } else {
+                    $this.addClass('out');
+                    $this.siblings().removeClass('out');
+                }
+            });
+        }
+    });
+    $(function () {
+        var $container, $menu, $menubtn, $navbar;
+        $menubtn = $('#hb');
+				$navbar = $('.navbar');
+        $menu = $('.navigation');
+        $container = $('.site-inner');
+        $menubtn.on('click', function (e) {
+            if ($menubtn.hasClass('active')) {
+                $menubtn.removeClass('active');
+                $menu.removeClass('slide-right');
+                $container.removeClass('slide-right');
+								$navbar.removeClass('slide-right');
+            } else {
+                $menubtn.addClass('active');
+                $menu.addClass('slide-right');
+                $container.addClass('slide-right');
+								$navbar.addClass('slide-right');
+            }
+        });
+    });
+    $(function () {
+        var $button, clickOrTouch;
+        clickOrTouch = 'click touchstart';
+        $button = $('#search-button');
+        $button.on(clickOrTouch, expand);
+    });
+    $(function () {
+        var $box;
+        $box = $('.sm-box');
+        $box.on('click', function (e) {
+					e.preventDefault();
+            var $this;
+            $this = $(this);
+            if ($this.hasClass('active')) {
+                $this.removeClass('active');
+            } else {
+                $this.addClass('active');
+            }
+        });
+    });
+}.call(this));
+
+$("select").each(function() {
+		var $this = $(this),
+				$options = $(this).children("option").length;
+
+		$this.addClass("select-hidden");
+		$this.wrap("<div class='select'></div>");
+		$this.after("<div class='select-styled'></div>");
+
+		var $styledSelect = $this.next("div.select-styled");
+		$styledSelect.text($this.children("option").eq(0).text());
+
+		var $list = $("<ul />", {
+				"class": "select-options"
+		}).insertAfter($styledSelect);
+
+		for (var i = 0; i < $options; i++) {
+				$("<li />", {
+						text: $this.children("option").eq(i).text(),
+						rel: $this.children("option").eq(i).val()
+				}).appendTo($list);
+		}
+
+		var $listItems = $list.children("li");
+
+		$styledSelect.on("click", function(e) {
+				e.stopPropagation();
+				$("div.select-styled.active").each(function() {
+						$(this).removeClass("active").next("ul.select-options").hide();
+				});
+
+				$(this).toggleClass("active").next("ul.select-options").toggle();
+		});
+
+		$listItems.on("click", function(e) {
+				e.stopPropagation();
+				$styledSelect.text($(this).text()).removeClass("active");
+				$this.val($(this).attr("rel"));
+				$list.hide();
+		});
+
+		$(document).on("click", function() {
+				$styledSelect.removeClass("active");
+				$list.hide();
+		});
+	
+		$(".select-sibling").next(".select-styled").css({
+			"border-top": "0px"
+		});
+});
+
+(function () {
+	var $addItem = $("#add-item");
+	var $badge = $(".badge");
+	var $count = 1;
+	
+	$addItem.on("click", function(e) {
+		e.preventDefault();
+		$badge.html($count++);
+	});
+}.call(this));
+</script>
+
+
+<%- include('partials/footer') %>

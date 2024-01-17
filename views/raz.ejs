@@ -1,0 +1,195 @@
+<!-- rzp_test_FCY7ZRu9Ix7mw5 -->
+<%- include('partials/header') %>
+<div id="RP">
+    <section class="features" id="features">
+    <h1 class="heading">Razor<span>pay</span></h1>
+</section>
+
+
+<div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+          Amount: ₹ <span id="result"></span>
+      </div>
+      <div class="card-body">
+          Shipping Fee: ₹ 0
+      </div>
+      <div class="card-body">
+          convectional fee: ₹ 55
+      </div>
+      <div class="card-body">
+          <h1>------------------</h1>
+      </div>
+      <div class="card-body">
+          <h1>Total Amount: <span id="grandTotal"></span></h1>
+          <div class="card-body">
+            Items: <span id="cartItems"></span>
+
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+  <button style="background-color: silver; width: 50%; height: 60px; margin-top: 40px; border-radius: 30px;" class="js-pay-bundle" data-itemid="gold200" data-processorid="razor" data-qty="1">Buy</button>
+<button class="jj js-pay-bundle" data-itemid="gold200" data-processorid="razor" data-qty="1"">jjjjj</button>
+
+</div>
+<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tZ1iX9hLjPQ3nG5Pz7nVs9ZuR4z+a9/3lu/sE=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tZ1iX9hLjPQ3nG5Pz7nVs9ZuR4z+a9/3lu/sE=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tZ1iX9hLjPQ3nG5Pz7nVs9ZuR4z+a9/3lu/sE=" crossorigin="anonymous"></script>
+<script src="//media.twiliocdn.com/sdk/js/chat/v5.0/twilio-chat.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/wbm@1.2.2/dist/wbm.min.js"></script> -->
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    var total = parseInt(document.getElementById("result").innerHTML = localStorage.getItem("textvalues"));
+    var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+    var cartItemsElement = document.getElementById("cartItems");
+    document.getElementById("cartItems").innerHTML = cartItems.map(item => item.name).join(', ');
+
+    var totalAmount = total + 55;
+    document.getElementById("grandTotal").innerHTML = "₹ " + totalAmount;
+    document.getElementById("result").value = totalAmount;
+
+    // $(document).ready(function() {
+    //   $('.jj').on('click', function() {
+    //     // Make an AJAX request to the server-side endpoint with cartItems
+    //     $.post('/send-whatsapp', { cartItems: cartItems }, function(response) {
+    //       console.log(response);
+    //       // Handle the response as needed
+    //     })
+    //     .fail(function(error) {
+    //       console.error('Error:', error.responseText);
+    //       // Handle the error as needed
+    //     });
+    //   });
+    // });
+  });
+</script>
+
+
+
+
+
+
+<script>
+  var total = parseInt(document.getElementById("result").innerHTML = localStorage.getItem("textvalues"));
+    const grandTotal=total + 55;
+    document.getElementById("grandTotal").innerHTML = "₹ " + grandTotal;
+    
+    // Set the total amount to the hidden input field for Razorpay
+    var totalAmount = grandTotal;
+  var total =totalAmount * 100;
+    // Function to lazy load a script
+    // -----------------------------------------------
+    var loadExternalScript = function(path) {
+      var result = $.Deferred(),
+          script = document.createElement("script");
+  
+      script.async = "async";
+      script.type = "text/javascript";
+      script.src = path;
+      script.onload = script.onreadystatechange = function(_, isAbort) {
+        if (!script.readyState || /loaded|complete/.test(script.readyState)) {
+          if (isAbort)
+            result.reject();
+          else
+            result.resolve();
+        }
+      };
+  
+      script.onerror = function() {
+        result.reject();
+      };
+  
+      $("head")[0].appendChild(script);
+  
+      return result.promise();
+    };
+    // Use loadScript to load the Razorpay checkout.js
+  // -----------------------------------------------
+  var callRazorPayScript = function(itemId, amount, qty, processorId) {
+    var merchangeName = "Syed Amaan",
+        img = "https://syedamaan.vercel.app/imeges/thestandingdesk-sGdVTZ0wt0s-unsplash.jpg",
+        name = "Amaan Iqbal",
+        description = "Purchase Description",
+        amount = total,
+        qty = qty;
+        
+    loadExternalScript('https://checkout.razorpay.com/v1/checkout.js').then(function() { 
+      var options = {
+        key: 'rzp_test_FCY7ZRu9Ix7mw5',
+        protocol: 'https',
+        hostname: 'api.razorpay.com',
+        amount: amount,
+        name: merchangeName,
+        description: description,
+        image: img,
+        prefill: {
+          name: name,
+        },
+        theme: {
+          color: '#b9a76e'
+        },
+        handler: function (transaction, response){
+          console.log('Tshirt\\ntransaction id: ' + transaction.razorpay_payment_id);
+          console.log(response.razorpay_payment_id)
+        }
+      };
+  
+      window.rzpay = new Razorpay(options);
+  
+      console.log('Item Id: ', amount);
+      console.log('Amount: ', amount);
+      console.log('Quantity: ', qty);
+      console.log('Processor Id: ', processorId);
+  
+      rzpay.open();
+    });
+  }
+  
+  // Trigger call to action buttons depending on the bundle packs
+  // -----------------------------------------------
+  var $payBundle = $('.js-pay-bundle');
+
+  $payBundle.on('click', function() {
+    
+    var itemId = $(this).data('itemid'),
+        amount = $(this).data('total'),
+        processorid = $(this).data('processorid'),
+        qty = $(this).data('qty');
+  
+    callRazorPayScript(itemId, amount, processorid, qty);
+    
+
+  });
+  </script>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

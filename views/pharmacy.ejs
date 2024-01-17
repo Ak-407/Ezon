@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+<div class="main">
+    
+
+  <div class="contactcontainer">  
+    <form id="contact" action="/pharmacy" method="post"  enctype="multipart/form-data">
+        <fieldset>
+        <input type="hidden" name="category" value="pharmacy">
+    </fieldset>
+      <h3>Seller Page</h3>
+      <h4>Upload Your <span style="color: Red;">pharmacy</span> Prduct Details with Image</h4>
+      <fieldset>
+        <input placeholder="Your Name" type="text" tabindex="1" required autofocus name="namem">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Email Address" type="email" tabindex="2" required name="emailm">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Phone Number" type="tel" tabindex="3" required name="phonem">
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Type your message here...." tabindex="4" required></textarea>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Product Name" type="text" tabindex="5" required name="productNamem">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Product Price" type="text" tabindex="6" required name="productPricem">
+      </fieldset>
+      <fieldset>
+        <input type="file" name="file">
+      </fieldset>
+      <fieldset class="CB">
+        <input type="checkbox" id="myCheck" name="test" required><span class="CB">   I confirm my commitment to using this
+           platform solely for positive and healthy purposes, and I pledge not to upload any photos with wrong
+            intentions or engage in any activities that may harm society, including the sale of drugs or any
+             other detrimental substances.</span>
+      </fieldset>
+        <button type="submit" role="button"  class="btn">submit</button>
+        
+    </form>
+  </div>
+  </div>
+<!-- <form action="/adminn" method="post" enctype="multipart/form-data">
+  <input type="file" name="file">
+  <button type="submit" role="button"  class="btn">submit</button>
+
+</form> -->
+
+<%- include('partials/footer') %>

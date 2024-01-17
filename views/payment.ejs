@@ -1,0 +1,116 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Payments</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+            <form id="razorpay-form" action="/payment" method="POST">
+            <div class="form-group">
+              <label for="email">Email <span class="red">*</span></label>
+              <input type="email" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="textContent">Full Name <span class="red">*</span></label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="Number">Phone Number <span class="red">*</span></label>
+                <input type="number" class="form-control" name="number" required>
+              </div>
+              <div class="form-group">
+                <label for="textContent">City <span class="red">*</span></label>
+                <input type="text" class="form-control" name="city" required>
+              </div>
+              <div class="form-group">
+                <label for="textContent">Full Address <span class="red">*</span> </label>
+                <input type="text" class="form-control" name="address" required>
+              </div>
+              <div class="form-group">
+                <label for="textContent">Country <span class="red">*</span></label>
+                <input type="text" class="form-control" name="country" required>
+              </div>
+              <div class="form-group">
+                <label for="Number">Pincode <span class="red">*</span></label>
+                <input type="number" class="form-control" name="pincode" required>
+              </div>
+            
+              <button type="submit" id="razorpay-btn" class="btn btn-dark">
+                <i class="fa-solid fa-bag-shopping fa-shake"></i> Pay With Razorpay
+              </button>
+        </form>
+        </div>
+        </div>
+        </div>
+
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+            Amount: ₹ <span id="result"></span>
+            Items: <span id="cartItems"></span>
+
+        </div>
+        <div class="card-body">
+            Shipping Fee: ₹ 0
+        </div>
+        <div class="card-body">
+            convectional fee: ₹ 55
+        </div>
+        <div class="card-body">
+            <h1>------------------</h1>
+        </div>
+        <div class="card-body">
+            <h1>Total Amount: <span id="grandTotal"></span></h1>
+        </div>
+    
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+    // var total = parseInt(document.getElementById("result").innerHTML = localStorage.getItem("textvalues"));
+    // const grandTotal=total + 55;
+    // document.getElementById("grandTotal").innerHTML = "₹ " + grandTotal;
+    
+    // // Set the total amount to the hidden input field for Razorpay
+    // var totalAmount = grandTotal;
+    // document.getElementById("result").value = totalAmount; 
+    // console.log(totalAmount);
+
+
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     var total = parseInt(document.getElementById("result").innerHTML = localStorage.getItem("textvalues"));
+    //     var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+    //     document.getElementById("cartItems").innerHTML = cartItems.map(item => item.name).join(' , ');
+
+    //     var totalAmount = total + 55;
+    //     document.getElementById("grandTotal").innerHTML = "₹ " + totalAmount;
+    //     document.getElementById("result").value = totalAmount;
+    // });
+  
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    var total = parseInt(document.getElementById("result").innerHTML = localStorage.getItem("textvalues"));
+    var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+
+    var cartItemsElement = document.getElementById("cartItems");
+    document.getElementById("cartItems").innerHTML = cartItems.map(item => item.name).join(', ');
+
+    var totalAmount = total + 55;
+    document.getElementById("grandTotal").innerHTML = "₹ " + totalAmount;
+    document.getElementById("result").value = totalAmount;
+
+});
+
+    
+  
+  </script>
+<%- include('partials/footer') %>
